@@ -71,28 +71,28 @@ function ComponentCard({ c, i }: { c: (typeof components)[number]; i: number }) 
     <Reveal delay={i * 60}>
       <button
         onClick={() => setOpen(!open)}
-        className="glass-dark group w-full rounded-2xl p-5 text-left transition hover:-translate-y-1 hover:bg-mint/10"
+        className="glass-light group w-full rounded-2xl p-5 text-left transition hover:-translate-y-1 hover:border-ember/60"
       >
         <div className="flex items-start justify-between gap-3">
           <div className="flex items-center gap-3">
-            <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-mint/15 text-mint group-hover:bg-mint/30">
+            <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-forest/10 text-forest group-hover:bg-forest/25">
               {c.icon}
             </span>
             <div>
-              <h4 className="font-display text-lg font-semibold text-mint">{c.name}</h4>
-              <p className="font-mono text-[11px] uppercase tracking-wider text-mint-soft/70">{c.role}</p>
+              <h4 className="font-display text-lg font-semibold text-forest">{c.name}</h4>
+              <p className="font-mono text-[11px] uppercase tracking-wider text-ink-soft">{c.role}</p>
             </div>
           </div>
           <ChevronDown
             size={18}
-            className={`mt-1 text-mint transition-transform duration-300 ${open ? 'rotate-180' : ''}`}
+            className={`mt-1 text-forest/50 transition-transform duration-300 group-hover:text-ember ${open ? 'rotate-180' : ''}`}
           />
         </div>
         <div
           className={`grid transition-all duration-300 ${open ? 'mt-3 grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}
         >
           <div className="overflow-hidden">
-            <p className="text-[13.5px] leading-relaxed text-mint-soft/90">{c.detail}</p>
+            <p className="text-[13.5px] leading-relaxed text-ink-soft">{c.detail}</p>
           </div>
         </div>
       </button>
