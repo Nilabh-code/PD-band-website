@@ -3,54 +3,188 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PD Band</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Parkin Pulse — Movement Monitoring Prototype</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: #fbf7ec;
+      color: #0b1410;
+      line-height: 1.6;
+    }
+    .wrap { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+    header.site {
+      background: #16382c;
+      color: #9cd9bc;
+      padding: 18px 0;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 20px; letter-spacing: .5px; }
+    .dot { width: 12px; height: 12px; border-radius: 50%; background: #e0704f; }
+    .hero { padding: 72px 0 48px; }
+    .hero h1 { font-size: clamp(44px, 9vw, 88px); line-height: 0.95; color: #16382c; }
+    .hero p.sub { margin: 18px 0; font-size: 20px; color: #33423a; max-width: 640px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 10px; }
+    .chip {
+      border: 1.5px dashed #16382c66; border-radius: 10px; padding: 8px 14px;
+      font-size: 13px; letter-spacing: 1px; color: #1e4a3a; font-weight: 600;
+    }
+    section { padding: 44px 0; border-top: 1px solid #16382c22; }
+    h2 { font-size: 30px; color: #16382c; margin-bottom: 14px; }
+    h2 small { display: block; font-size: 12px; text-transform: uppercase; letter-spacing: 3px; color: #c4553a; margin-bottom: 6px; }
+    p { color: #33423a; margin-bottom: 14px; }
+    ul { padding-left: 20px; color: #33423a; margin-bottom: 14px; }
+    li { margin-bottom: 6px; }
+    .grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+    .card {
+      border: 1.5px dashed #16382c55; border-radius: 16px; padding: 16px; background: #fff;
+    }
+    .card h3 { font-size: 15px; color: #16382c; margin-bottom: 4px; }
+    .card .mono { font-family: ui-monospace, Consolas, monospace; font-size: 12px; color: #c4553a; }
+    .flow { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 14px 0; }
+    .flow span {
+      border: 1px solid #16382c44; border-radius: 8px; padding: 8px 12px;
+      font-size: 13px; font-weight: 600; color: #16382c; background: #fff;
+    }
+    .flow em { color: #c4553a; font-style: normal; font-weight: 700; }
+    .dash-cards { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+    .dash b { display: block; font-size: 22px; color: #16382c; }
+    .dash small { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #33423a; }
+    .badge {
+      display: inline-block; border: 1px solid #d9b45a; color: #b18a2f;
+      background: #d9b45a22; border-radius: 999px; padding: 4px 12px;
+      font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px;
+    }
+    .dark { background: #16382c; color: #e2f2e9; }
+    .dark h2 { color: #9cd9bc; }
+    .dark p, .dark ul { color: #bfe9d4; }
+    footer { background: #0b1410; color: #9cd9bc88; padding: 28px 0; font-size: 13px; text-align: center; }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>PD Band</h1>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#music">Music</a>
-      <a href="#shows">Shows</a>
-      <a href="#contact">Contact</a>
-    </nav>
+  <header class="site">
+    <div class="wrap brand">
+      <span class="dot"></span> PARKIN PULSE
+      <span style="font-size:12px;color:#bfe9d4cc;letter-spacing:2px;text-transform:uppercase;text-decoration:none;">movement monitoring prototype</span>
+    </div>
   </header>
 
-  <section id="hero">
-    <h2>Rock your world</h2>
-    <p>Simple tunes. Loud guitars. Good times.</p>
-  </section>
+  <div class="wrap">
+    <section class="hero" style="border:0;">
+      <h1>PARKIN<br>PULSE</h1>
+      <p class="sub">A smart ankle-worn wearable that watches how a Parkinson&rsquo;s patient walks and shakes &mdash; and warns a caregiver before a fall happens.</p>
+      <div class="chips">
+        <span class="chip">6-AXIS IMU</span>
+        <span class="chip">16 FEATURES</span>
+        <span class="chip">EDGE PROCESSING</span>
+        <span class="chip">MOVEMENT ANALYSIS</span>
+      </div>
+    </section>
 
-  <section id="about">
-    <h2>About</h2>
-    <p>We are a small band making big noise.</p>
-  </section>
+    <section>
+      <h2><small>01 &middot; The Problem</small>Why watch movement continuously?</h2>
+      <p>Parkinson&rsquo;s patients can experience autonomic dysfunction leading to orthostatic hypotension (a drop in blood pressure on standing) and fainting. Beyond those events, movement changes shape daily life: gait abnormalities, movement instability, tremor-related oscillations, freezing-related gait changes, and potentially dangerous movement events.</p>
+      <p>These changes appear in short windows and vary hour to hour &mdash; capturing them continuously needs a sensor that lives on the body.</p>
+    </section>
 
-  <section id="music">
-    <h2>Music</h2>
-    <ul>
-      <li>First Song</li>
-      <li>Second Song</li>
-      <li>Third Song</li>
-    </ul>
-  </section>
+    <section>
+      <h2><small>02 &middot; The Solution</small>Wear it where movement happens</h2>
+      <p>Parkin Pulse is a lightweight <b>ankle-worn IMU device</b> for continuous movement monitoring. The ankle is involved directly in gait and lower-limb motion, giving useful access to walking rhythm, step timing, stride variability, movement intensity, and frequency-domain gait characteristics.</p>
+      <div class="grid">
+        <div class="card"><h3>Walking rhythm</h3><p>Step timing and cadence sensed at their source.</p></div>
+        <div class="card"><h3>Stride variability</h3><p>Cycle-to-cycle timing consistency.</p></div>
+        <div class="card"><h3>Movement intensity</h3><p>Lower-limb acceleration across a window.</p></div>
+        <div class="card"><h3>Spectral content</h3><p>Frequency-domain gait / tremor characteristics.</p></div>
+      </div>
+    </section>
 
-  <section id="shows">
-    <h2>Shows</h2>
-    <ul>
-      <li>Aug 20 - Local Bar</li>
-      <li>Sep 5 - City Hall</li>
-    </ul>
-  </section>
+    <section>
+      <h2><small>03 &middot; Hardware</small>The device</h2>
+      <div class="grid">
+        <div class="card"><h3>ESP32-S3</h3><p>Embedded controller that acquires and processes sensor data on-device.</p></div>
+        <div class="card"><h3>MPU6050</h3><p>6-axis IMU &mdash; 3-axis accelerometer (ax, ay, az) + 3-axis gyroscope (gx, gy, gz).</p></div>
+        <div class="card"><h3>Temperature Probe</h3><p>Auxiliary temperature measurement (not presented as a validated biomarker).</p></div>
+        <div class="card"><h3>3D Printed Case</h3><p>Custom enclosure for the wearable electronics.</p></div>
+        <div class="card"><h3>9V Battery</h3><p>Prototype power source.</p></div>
+        <div class="card"><h3>LM2596 Converter</h3><p>Power regulation / conversion stage.</p></div>
+      </div>
+      <div class="flow">
+        <span>MPU6050</span> <em>&rarr;</em>
+        <span>ESP32-S3</span> <em>&rarr;</em>
+        <span>Signal Processing</span> <em>&rarr;</em>
+        <span>Feature Extraction</span> <em>&rarr;</em>
+        <span>Analysis</span> <em>&rarr;</em>
+        <span>Companion Interface</span>
+      </div>
+    </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: hello@pdband.example</p>
-  </section>
+    <section>
+      <h2><small>04 &middot; From Motion to Meaning</small>Processing pipeline</h2>
+      <div class="flow">
+        <span>RAW IMU DATA</span> <em>&darr;</em>
+        <span>5-SECOND WINDOW</span> <em>&darr;</em>
+        <span>SIGNAL PROCESSING</span> <em>&darr;</em>
+        <span>FFT + GAIT ANALYSIS</span> <em>&darr;</em>
+        <span>16 FEATURES</span> <em>&darr;</em>
+        <span>MOVEMENT INTERPRETATION</span>
+      </div>
+      <p>From many thousands of samples per minute to a small, readable set of movement descriptors.</p>
+    </section>
+
+    <section>
+      <h2><small>05 &middot; The 16 Features</small>Time, frequency &amp; gait descriptors</h2>
+      <div class="grid">
+        <div class="card"><h3>01 Mean Accel Magnitude</h3><p class="mono">|a| = &radic;(ax&sup2;+ay&sup2;+az&sup2;)</p><p>Average movement magnitude.</p></div>
+        <div class="card"><h3>02 Accel Std Dev</h3><p>Acceleration variability.</p></div>
+        <div class="card"><h3>03 RMS</h3><p>Root-mean-square magnitude / energy.</p></div>
+        <div class="card"><h3>04 Peak-to-Peak</h3><p>max(a) &minus; min(a).</p></div>
+        <div class="card"><h3>05 Signal Magnitude Area</h3><p>Aggregated absolute acceleration.</p></div>
+        <div class="card"><h3>06 Zero-Crossing Rate</h3><p>Crossings around the mean level.</p></div>
+        <div class="card"><h3>07 Skewness</h3><p>Distribution asymmetry.</p></div>
+        <div class="card"><h3>08 Kurtosis</h3><p>Peakedness / heavy tails.</p></div>
+        <div class="card"><h3>09 Dominant Frequency</h3><p>Strongest spectral component.</p></div>
+        <div class="card"><h3>10 Tremor Band Power</h3><p>Power in ~4&ndash;6 Hz relative to total.</p></div>
+        <div class="card"><h3>11 Freeze Index</h3><p class="mono">P(3&ndash;8 Hz) / P(0.5&ndash;3 Hz)</p><p>Frequency-domain FOG-research ratio.</p></div>
+        <div class="card"><h3>12 Spectral Entropy</h3><p>Concentration of spectral power.</p></div>
+        <div class="card"><h3>13 Mean Stride Time</h3><p>Average inter-step interval.</p></div>
+        <div class="card"><h3>14 Stride-Time CV%</h3><p class="mono">CV = &sigma;/mean &times; 100</p><p>Gait timing variability.</p></div>
+        <div class="card"><h3>15 Cadence</h3><p>Steps per minute.</p></div>
+        <div class="card"><h3>16 Step Regularity</h3><p>Autocorrelation-based gait consistency.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2><small>06 &middot; Demonstration Dashboard</small>What the prototype reads</h2>
+      <span class="badge">DEMONSTRATION DATA &mdash; not live, not clinical</span>
+      <div class="dash-cards">
+        <div class="card dash"><small>Movement Intensity</small><b>37.12</b></div>
+        <div class="card dash"><small>Dominant Frequency</small><b>1.84 Hz</b></div>
+        <div class="card dash"><small>Tremor Band Power</small><b>7.8%</b></div>
+        <div class="card dash"><small>Freeze Index</small><b>0.214</b></div>
+        <div class="card dash"><small>Mean Stride Time</small><b>0.98 s</b></div>
+        <div class="card dash"><small>Stride CV</small><b>4.6%</b></div>
+        <div class="card dash"><small>Cadence</small><b>61 steps/min</b></div>
+        <div class="card dash"><small>Step Regularity</small><b>0.87</b></div>
+        <div class="card dash"><small>Temperature</small><b>33.7&deg;C</b></div>
+      </div>
+    </section>
+
+    <section>
+      <h2><small>07 &middot; Honesty</small>Current limitations</h2>
+      <ul>
+        <li>Prototype-scale validation</li>
+        <li>Sensor placement sensitivity</li>
+        <li>Limited training / validation data</li>
+        <li>Individual gait differences</li>
+        <li>Demonstration data is not clinical data</li>
+        <li>Not a diagnostic device</li>
+        <li>Clinical fall-risk validation remains future work</li>
+      </ul>
+    </section>
+  </div>
 
   <footer>
-    <p>&copy; 2026 PD Band</p>
+    Parkin Pulse &mdash; movement-monitoring and analysis prototype, not a clinically validated diagnostic device.<br>
+    &copy; 2026 Parkin Pulse
   </footer>
 </body>
 </html>
