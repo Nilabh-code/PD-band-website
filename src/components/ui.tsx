@@ -61,7 +61,7 @@ export function Chip({
   )
 }
 
-// reveal-on-scroll wrapper
+// reveal-on-scroll wrapper (with hard fallback so content can never stay hidden)
 export function Reveal({
   children,
   delay = 0,
@@ -76,6 +76,10 @@ export function Reveal({
   useEffect(() => {
     const el = ref.current
     if (!el) return
+    if (typeof IntersectionObserver === 'undefined') {
+      setShow(true)
+      return
+    }
     const io = new IntersectionObserver(
       (e) => {
         if (e[0].isIntersecting) {
@@ -86,7 +90,11 @@ export function Reveal({
       { threshold: 0.12 },
     )
     io.observe(el)
-    return () => io.disconnect()
+    const failSafe = window.setTimeout(() => setShow(true), 3000)
+    return () => {
+      io.disconnect()
+      window.clearTimeout(failSafe)
+    }
   }, [])
   return (
     <div
@@ -100,6 +108,7 @@ export function Reveal({
 }
 
 // children only mount once visible (triggers Recharts draw-in animation)
+// with a hard fallback so charts are never missing
 export function Lazy({
   children,
   className = '',
@@ -112,6 +121,10 @@ export function Lazy({
   useEffect(() => {
     const el = ref.current
     if (!el) return
+    if (typeof IntersectionObserver === 'undefined') {
+      setShow(true)
+      return
+    }
     const io = new IntersectionObserver(
       (e) => {
         if (e[0].isIntersecting) {
@@ -122,7 +135,11 @@ export function Lazy({
       { threshold: 0.1 },
     )
     io.observe(el)
-    return () => io.disconnect()
+    const failSafe = window.setTimeout(() => setShow(true), 3000)
+    return () => {
+      io.disconnect()
+      window.clearTimeout(failSafe)
+    }
   }, [])
   return (
     <div ref={ref} className={className}>

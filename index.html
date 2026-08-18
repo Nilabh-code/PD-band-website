@@ -14,7 +14,16 @@
     />
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <noscript>
+        <div style="max-width:640px;margin:80px auto;font-family:system-ui,sans-serif;color:#0b1410;padding:24px">
+          <h1 style="color:#16382c">Parkin Pulse</h1>
+          <p>This interactive showcase needs JavaScript enabled in your browser.</p>
+          <p style="font-size:13px">Tip: if you are opening <code>index.html</code> directly from disk, run
+          <code>npm run dev</code> in the project folder instead, or view the deployed site so the app can load.</p>
+        </div>
+      </noscript>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
