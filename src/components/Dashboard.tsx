@@ -44,7 +44,7 @@ export default function Dashboard() {
       <div className="mx-auto max-w-[1400px] px-6 py-24 md:px-8">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <Reveal>
-            <SectionTag dark>06 — monitoring view</SectionTag>
+            <SectionTag dark>09 — monitoring view</SectionTag>
             <H2 className="mt-5 text-mint">
               Movement <span className="sketch-underline">dashboard</span>
             </H2>

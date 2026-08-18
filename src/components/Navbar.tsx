@@ -3,8 +3,9 @@ import { Activity, Menu, X, Presentation } from 'lucide-react'
 
 const links = [
   { label: 'Overview', href: '#overview' },
+  { label: 'The Signal', href: '#signal' },
   { label: 'Hardware', href: '#hardware' },
-  { label: 'Signal Processing', href: '#pipeline' },
+  { label: 'Processing', href: '#pipeline' },
   { label: '16 Features', href: '#features' },
   { label: 'Dashboard', href: '#dashboard' },
   { label: 'Companion', href: '#companion' },

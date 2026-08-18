@@ -53,7 +53,7 @@ export default function SignalPipeline() {
     <SectionShell id="pipeline" tone="forest">
       <div className="mx-auto max-w-[1400px] px-6 py-28 md:px-8">
         <Reveal>
-          <SectionTag dark>04 — the processing chain</SectionTag>
+          <SectionTag dark>06 — from motion to meaning</SectionTag>
           <H2 className="mt-5 text-mint-soft">
             FROM MOTION <span className="sketch-underline text-mint">TO MEANING</span>
           </H2>
@@ -103,6 +103,47 @@ export default function SignalPipeline() {
             ))}
           </div>
         </div>
+
+        <Reveal delay={120}>
+          <div className="mt-14 grid gap-4 lg:grid-cols-4">
+            {[
+              {
+                n: '1',
+                t: 'Convert counts → real units',
+                d: 'Raw sensor counts become g-force and °/s using calibration constants.',
+              },
+              {
+                n: '2',
+                t: 'Total movement magnitude',
+                d: 'Three accelerometer axes combine into one orientation-independent number — how the band sits on the ankle no longer matters.',
+              },
+              {
+                n: '3',
+                t: 'High-pass filter',
+                d: 'Gravity is constant, tremor is fast — filtering separates dynamic motion from gravity.',
+              },
+              {
+                n: '4',
+                t: 'Frequency detection',
+                d: 'Goertzel-style analysis checks just the key bands — gait rhythm and tremor — with far less compute than a full spectrum.',
+              },
+            ].map((s, i) => (
+              <div
+                key={s.n}
+                className="glass-dark rounded-2xl p-5 transition hover:-translate-y-1 hover:bg-mint/10"
+              >
+                <div className="font-mono text-[24px] font-bold text-ember/80">{s.n}</div>
+                <div className="mt-1 font-display text-base font-semibold text-mint">{s.t}</div>
+                <p className="mt-1.5 text-[12.5px] leading-relaxed text-mint-soft/85">{s.d}</p>
+                {i === 3 && (
+                  <span className="mt-2 inline-block rounded-full bg-ember/20 px-2 py-0.5 font-mono text-[9.5px] uppercase tracking-wider text-ember">
+                    on-device · not a full FFT
+                  </span>
+                )}
+              </div>
+            ))}
+          </div>
+        </Reveal>
 
         <Reveal delay={120}>
           <div className="mt-14 flex items-center justify-center gap-3 rounded-full border border-mint/25 bg-mint/10 px-6 py-3 w-max mx-auto">

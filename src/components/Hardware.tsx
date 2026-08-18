@@ -105,7 +105,7 @@ export default function Hardware() {
     <SectionShell id="hardware" tone="light">
       <div className="mx-auto max-w-[1400px] px-6 py-24 md:px-8">
         <Reveal>
-          <SectionTag>03 — hardware</SectionTag>
+          <SectionTag>03 — the device</SectionTag>
           <H2 className="mt-5 text-forest">
             The <span className="sketch-underline">device</span>
           </H2>

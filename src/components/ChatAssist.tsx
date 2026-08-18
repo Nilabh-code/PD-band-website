@@ -11,7 +11,7 @@ export default function ChatAssist() {
       <div className="mx-auto max-w-[1400px] px-6 py-24 md:px-8">
         <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr]">
           <Reveal>
-            <SectionTag>12 — conversational layer</SectionTag>
+            <SectionTag>13 — conversational layer</SectionTag>
             <H2 className="mt-5 text-forest">
               PARKIN PULSE <span className="sketch-underline">ASSIST</span>
             </H2>

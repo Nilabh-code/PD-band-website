@@ -16,7 +16,7 @@ const slides: Slide[] = [
   { id: 'problem', title: 'THE PROBLEM', subtitle: 'Why continuous movement monitoring matters', icon: <AlertTriangle size={26} /> },
   { id: 'device', title: 'THE DEVICE', subtitle: 'The ankle wearable & the hardware behind it', icon: <Box size={26} /> },
   { id: 'signal', title: 'THE SIGNAL', subtitle: 'Raw accelerometer & gyroscope data', icon: <WavesIcon size={26} /> },
-  { id: 'features', title: 'THE FEATURES', subtitle: 'From motion to the 16-feature vector', icon: <LayoutGrid size={26} /> },
+  { id: 'features', title: 'THE PIPELINE', subtitle: 'From motion to the 16-feature vector', icon: <LayoutGrid size={26} /> },
   { id: 'intelligence', title: 'THE INTELLIGENCE', subtitle: 'How features feed an analysis / ML layer', icon: <Brain size={26} /> },
   { id: 'demo', title: 'THE DEMO', subtitle: 'The static monitoring dashboard', icon: <ClipboardCheck size={26} /> },
 ]
@@ -145,26 +145,42 @@ export default function JudgeMode({ open, onClose }: { open: boolean; onClose: (
 
 function ProblemSlide() {
   return (
-    <div className="grid gap-8 md:grid-cols-2">
-      <div className="glass-dark rounded-3xl p-7">
-        <h3 className="font-display text-xl font-semibold text-mint mb-4">Movement that deserves watching</h3>
-        <ul className="space-y-3 text-[15px] text-mint-soft/90 leading-relaxed">
-          <li className="flex gap-2.5"><HeartPulse size={17} className="shrink-0 text-ember mt-0.5" /> Autonomic dysfunction can cause orthostatic hypotension &amp; fainting on standing.</li>
-          <li className="flex gap-2.5"><WavesIcon size={17} className="shrink-0 text-mint mt-0.5" /> Gait abnormalities &amp; movement instability.</li>
-          <li className="flex gap-2.5"><Activity size={17} className="shrink-0 text-gold mt-0.5" /> Tremor-related oscillations &amp; freezing-related gait changes.</li>
-          <li className="flex gap-2.5"><AlertTriangle size={17} className="shrink-0 text-ember mt-0.5" /> Potentially dangerous movement events — hard to catch without continuous sensing.</li>
-        </ul>
+    <div className="space-y-6">
+      <div className="grid gap-4 sm:grid-cols-2">
+        <div className="glass-dark rounded-2xl p-6">
+          <div className="font-mono text-[10px] uppercase tracking-wider text-mint-soft/70">
+            living with Parkinson’s in India · project research reference
+          </div>
+          <div className="mt-1 font-display text-5xl font-bold text-mint tabular-nums">7,00,000+</div>
+        </div>
+        <div className="glass-dark rounded-2xl p-6">
+          <div className="font-mono text-[10px] uppercase tracking-wider text-mint-soft/70">
+            projected in India by 2030 · project research reference
+          </div>
+          <div className="mt-1 font-display text-5xl font-bold text-gold tabular-nums">≈ 28 lakh</div>
+        </div>
       </div>
-      <div className="glass-dark rounded-3xl p-7">
-        <h3 className="font-display text-xl font-semibold text-mint mb-4">The monitoring gap</h3>
-        <p className="text-[15px] leading-relaxed text-mint-soft/90">
-          These changes surface in short windows and shift hour to hour. Capturing them during daily life
-          requires unobtrusive, continuous sensing at the body itself — which is exactly what an
-          ankle-worn IMU prototype can provide.
-        </p>
-        <div className="mt-5 rounded-2xl border border-dashed border-mint/30 p-4 text-[13px] leading-relaxed text-mint-soft/80">
-          <strong className="text-mint">Honest framing —</strong> continuous movement monitoring is the goal;
-          clinical diagnosis or fall-risk prediction is explicitly out of scope for this prototype.
+      <div className="grid gap-6 md:grid-cols-2">
+        <div className="glass-dark rounded-3xl p-7">
+          <h3 className="font-display text-xl font-semibold text-mint mb-4">The most dangerous part isn’t the tremor</h3>
+          <ul className="space-y-3 text-[15px] text-mint-soft/90 leading-relaxed">
+            <li className="flex gap-2.5"><HeartPulse size={17} className="shrink-0 text-ember mt-0.5" /> Autonomic dysfunction can cause orthostatic hypotension &amp; fainting on standing.</li>
+            <li className="flex gap-2.5"><AlertTriangle size={17} className="shrink-0 text-ember mt-0.5" /> The real risk: a sudden fall — often while completely alone.</li>
+            <li className="flex gap-2.5"><WavesIcon size={17} className="shrink-0 text-mint mt-0.5" /> Gait abnormalities, movement instability &amp; freezing-related gait changes.</li>
+            <li className="flex gap-2.5"><Activity size={17} className="shrink-0 text-gold mt-0.5" /> Tremor-related oscillations &amp; potentially dangerous movement events.</li>
+          </ul>
+        </div>
+        <div className="glass-dark rounded-3xl p-7">
+          <h3 className="font-display text-xl font-semibold text-mint mb-4">The monitoring gap</h3>
+          <p className="text-[15px] leading-relaxed text-mint-soft/90">
+            These changes surface in short windows and shift hour to hour. Capturing them during daily life
+            requires unobtrusive, continuous sensing at the body itself — which is exactly what an
+            ankle-worn IMU prototype can provide.
+          </p>
+          <div className="mt-5 rounded-2xl border border-dashed border-mint/30 p-4 text-[13px] leading-relaxed text-mint-soft/80">
+            <strong className="text-mint">Honest framing —</strong> continuous movement monitoring is the goal;
+            clinical diagnosis or fall-risk prediction is explicitly out of scope for this prototype.
+          </div>
         </div>
       </div>
     </div>
@@ -241,6 +257,9 @@ function FeaturesSlide() {
             </div>
           ))}
         </div>
+        <p className="mt-3 font-mono text-[11px] text-mint-soft/60">
+          On-device frequency detection is Goertzel-style (a handful of key bands); a full FFT is shown here for illustration.
+        </p>
       </div>
       <div className="grid md:grid-cols-3 gap-4">
         <div className="glass-dark rounded-2xl p-5">

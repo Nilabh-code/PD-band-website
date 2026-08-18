@@ -13,7 +13,7 @@ export default function Research() {
     <SectionShell id="research" tone="light">
       <div className="mx-auto max-w-[1400px] px-6 py-24 md:px-8">
         <Reveal>
-          <SectionTag>16 — scientific grounding</SectionTag>
+          <SectionTag>17 — scientific grounding</SectionTag>
           <H2 className="mt-5 text-forest">
             Research <span className="sketch-underline">basis</span>
           </H2>

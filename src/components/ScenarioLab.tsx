@@ -61,7 +61,7 @@ export default function ScenarioLab() {
     <SectionShell tone="light">
       <div className="mx-auto max-w-[1400px] px-6 py-24 md:px-8">
         <Reveal>
-          <SectionTag>07 — interactive demonstration</SectionTag>
+          <SectionTag>10 — interactive demonstration</SectionTag>
           <H2 className="mt-5 text-forest">
             What <span className="sketch-underline">happens if…?</span>
           </H2>

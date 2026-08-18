@@ -113,7 +113,7 @@ export default function HardwareShowcase() {
     <SectionShell tone="light">
       <div className="mx-auto max-w-[1400px] px-6 py-24 md:px-8">
         <Reveal>
-          <SectionTag>09 — the prototype on the poster</SectionTag>
+          <SectionTag>04 — the prototype on the poster</SectionTag>
           <H2 className="mt-5 text-forest">
             Explore the <span className="sketch-underline">wearable</span>
           </H2>

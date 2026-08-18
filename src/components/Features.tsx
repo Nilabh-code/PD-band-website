@@ -107,7 +107,7 @@ export default function Features() {
       <div className="mx-auto max-w-[1400px] px-6 py-24 md:px-8">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <Reveal>
-            <SectionTag>05 — feature set</SectionTag>
+            <SectionTag>07 — feature set</SectionTag>
             <H2 className="mt-5 text-forest">
               The <span className="sketch-underline">16 features</span>
             </H2>

@@ -123,6 +123,61 @@ export default function Explainable() {
             Illustrative demonstration of prototype reasoning — not a clinical prediction.
           </p>
         </Reveal>
+
+        {/* script beat 2:15–2:45 — freeze-of-gait + fall confirmation */}
+        <div className="mt-12 grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
+          <Reveal delay={60}>
+            <div className="glass-dark rounded-3xl p-6 h-full">
+              <div className="font-mono text-[11px] uppercase tracking-[0.2em] text-ember">freeze-of-gait</div>
+              <h3 className="mt-2 font-display text-2xl font-semibold text-mint">
+                From steps to sudden shuffles
+              </h3>
+              <p className="mt-3 text-[14px] leading-relaxed text-mint-soft/85">
+                The <strong className="text-mint">Freeze Index</strong> is a published-style frequency
+                formula (3–8 Hz ÷ 0.5–3 Hz). When a patient’s steps suddenly shrink into rapid, tiny
+                shuffles instead of stopping cleanly, the band-power shifts — and the index moves.
+              </p>
+              <div className="mt-4 rounded-xl bg-ink/60 border border-mint/15 p-4 font-mono text-[12.5px] text-mint-soft leading-loose">
+                <div className="text-mint">freeze_index = P(3–8 Hz) / P(0.5–3 Hz)</div>
+                <div className="text-mint-soft/70">ratio cited in freezing-of-gait research</div>
+              </div>
+              <p className="mt-3 text-[12px] text-mint-soft/60">
+                The index describes a pattern — it does not independently detect clinical freezing.
+              </p>
+            </div>
+          </Reveal>
+
+          <Reveal delay={120}>
+            <div className="glass-dark rounded-3xl p-6 h-full border-mint/30 relative overflow-hidden">
+              <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-ember/15 blur-3xl" />
+              <div className="font-mono text-[11px] uppercase tracking-[0.2em] text-ember">fall confirmation</div>
+              <h3 className="mt-2 font-display text-2xl font-semibold text-mint">
+                Three conditions, together
+              </h3>
+              <p className="mt-3 text-[14px] leading-relaxed text-mint-soft/85">
+                A fall is never judged from one signal. The prototype requires all three — which keeps it
+                from alarming every time someone sits down hard.
+              </p>
+              <div className="mt-4 grid gap-3 sm:grid-cols-3">
+                {[
+                  { t: 'Sharp impact', d: 'spike above normal walking force', i: '01' },
+                  { t: 'Sustained stillness', d: 'at least ~1 s of quiet after impact', i: '02' },
+                  { t: 'Orientation change', d: 'upright → lying position shift', i: '03' },
+                ].map((c) => (
+                  <div key={c.i} className="rounded-2xl border border-ember/30 bg-ember/10 p-4 text-center">
+                    <div className="font-mono text-[10px] text-ember">{c.i}</div>
+                    <div className="mt-1 font-display text-base font-semibold text-mint">{c.t}</div>
+                    <div className="mt-1 text-[11.5px] text-mint-soft/75">{c.d}</div>
+                  </div>
+                ))}
+              </div>
+              <p className="mt-3 text-[12px] text-mint-soft/60">
+                Sitting down hard fails the orientation-change check. Presented as prototype logic —
+                clinical fall-risk validation remains future work.
+              </p>
+            </div>
+          </Reveal>
+        </div>
       </div>
     </SectionShell>
   )

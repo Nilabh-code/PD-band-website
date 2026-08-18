@@ -15,7 +15,7 @@ export default function Cost() {
       <div className="mx-auto max-w-[1400px] px-6 py-24 md:px-8">
         <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] items-center">
           <Reveal>
-            <SectionTag>10 — cost of build</SectionTag>
+            <SectionTag>14 — cost of build</SectionTag>
             <H2 className="mt-5 text-forest">
               Prototype <span className="sketch-underline">cost</span>
             </H2>

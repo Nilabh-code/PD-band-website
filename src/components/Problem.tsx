@@ -50,22 +50,52 @@ export default function Problem() {
       <SectionShell tone="light">
         <div className="mx-auto max-w-[1400px] px-6 py-24 md:px-8">
           <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr]">
-            <Reveal>
-              <SectionTag>01 — the problem</SectionTag>
-              <H2 className="mt-5 text-forest">
-                Why watch <span className="sketch-underline">movement</span> continuously?
-              </H2>
-              <p className="mt-6 text-lg leading-relaxed text-ink-soft">
-                Parkinson’s disease affects far more than the tremor people picture most often. It disturbs
-                the autonomic nervous system and, critically, the machinery of everyday movement.
-              </p>
-              <div className="mt-6 flex flex-wrap gap-2">
-                <Chip><HeartPulse size={13} className="mr-1 text-ember" />Orthostatic hypotension</Chip>
-                <Chip><AlertTriangle size={13} className="mr-1 text-ember" />Fainting risk</Chip>
-                <Chip>Gait instability</Chip>
-                <Chip>Freezing episodes</Chip>
+<Reveal>
+          <SectionTag>01 — the problem</SectionTag>
+          <H2 className="mt-5 text-forest">
+            Why watch <span className="sketch-underline">movement</span> continuously?
+          </H2>
+          <p className="mt-6 text-lg leading-relaxed text-ink-soft">
+            Parkinson’s disease affects far more than the tremor people picture most often. It disturbs
+            the autonomic nervous system and, critically, the machinery of everyday movement.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-2">
+            <Chip><HeartPulse size={13} className="mr-1 text-ember" />Orthostatic hypotension</Chip>
+            <Chip><AlertTriangle size={13} className="mr-1 text-ember" />Fainting risk</Chip>
+            <Chip>Gait instability</Chip>
+            <Chip>Freezing episodes</Chip>
+          </div>
+        </Reveal>
+
+        {/* hook stats band (script beat 0:00) */}
+        <Reveal delay={120}>
+          <div className="rounded-3xl border-2 border-dashed border-forest/30 bg-cream/80 p-6 md:p-8">
+            <p className="font-display text-xl md:text-2xl font-semibold text-forest leading-snug">
+              “One of the most dangerous parts isn’t the tremor itself — it’s the risk of a sudden fall,
+              often while completely alone.”
+            </p>
+            <div className="mt-6 grid gap-4 sm:grid-cols-2">
+              <div className="rounded-2xl bg-forest p-5 text-mint">
+                <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-mint-soft/70">
+                  living with Parkinson’s in India (project research reference)
+                </div>
+                <div className="mt-1 font-display text-4xl md:text-5xl font-bold tabular-nums">7,00,000+</div>
               </div>
-            </Reveal>
+              <div className="rounded-2xl bg-ink p-5 text-mint">
+                <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-mint-soft/70">
+                  projected in India by 2030 (project research reference)
+                </div>
+                <div className="mt-1 font-display text-4xl md:text-5xl font-bold tabular-nums text-gold">
+                  ≈ 28 lakh
+                </div>
+              </div>
+            </div>
+            <p className="mt-4 font-mono text-[10.5px] tracking-wide text-ink-soft">
+              Figures as cited in the project’s outreach materials — shared here as a presentation
+              reference, not a clinical claim.
+            </p>
+          </div>
+        </Reveal>
 
             <div className="grid gap-5">
               {problemPoints.map((p, i) => (

@@ -38,7 +38,7 @@ export default function LimitsFuture() {
       <SectionShell tone="light">
         <div className="mx-auto max-w-[1400px] px-6 py-24 md:px-8">
           <Reveal>
-            <SectionTag>14 — honesty</SectionTag>
+            <SectionTag>15 — honesty</SectionTag>
             <H2 className="mt-5 text-forest">
               Current <span className="sketch-underline">limitations</span>
             </H2>
@@ -69,7 +69,7 @@ export default function LimitsFuture() {
       <SectionShell id="future" tone="forest" className="blueprint-bg">
         <div className="mx-auto max-w-[1400px] px-6 py-28 md:px-8">
           <Reveal>
-            <SectionTag dark>15 — roadmap</SectionTag>
+            <SectionTag dark>16 — roadmap</SectionTag>
             <H2 className="mt-5 text-mint">
               What comes <span className="sketch-underline text-mint">next</span>
             </H2>

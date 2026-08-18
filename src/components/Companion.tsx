@@ -10,7 +10,7 @@ export default function Companion() {
       <div className="mx-auto max-w-[1400px] px-6 py-24 md:px-8">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <Reveal>
-            <SectionTag dark>11 — companion interface</SectionTag>
+            <SectionTag dark>12 — companion interface</SectionTag>
             <H2 className="mt-5 text-mint">
               The <span className="sketch-underline">companion view</span>
             </H2>

@@ -60,7 +60,7 @@ export default function Engineering() {
     <SectionShell tone="light">
       <div className="mx-auto max-w-[1400px] px-6 py-24 md:px-8">
         <Reveal>
-          <SectionTag>13 — under the hood</SectionTag>
+          <SectionTag>11 — under the hood</SectionTag>
           <H2 className="mt-5 text-forest">
             THE <span className="sketch-underline">ENGINEERING</span>
           </H2>
